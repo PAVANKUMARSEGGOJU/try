@@ -1,0 +1,27 @@
+#---
+# Excerpted from "Developing Facebook Platform Applications with Rails",
+# published by The Pragmatic Bookshelf.
+# Copyrights apply to this code. It may not be used to create training material, 
+# courses, books, articles, and the like. Contact us if you are in doubt.
+# We make no guarantees that this code is fit for any purpose. 
+# Visit http://www.pragmaticprogrammer.com/titles/mmfacer for more book information.
+#---
+# Methods added to this helper will be available to all templates in the application.
+module ApplicationHelper
+  
+  def name(user,options={})
+    fb_name(user,
+      {:ifcantsee=>(user.nickname||"a hidden ninja")}.merge(options))
+  end
+  
+  def external_name(user)
+    user.nickname || "a hidden ninja"
+  end
+    
+  
+  
+  def attack_result(attack)
+    attack.hit? ? "hit" : "missed"
+  end
+
+end

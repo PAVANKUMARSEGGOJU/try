@@ -1,0 +1,5 @@
+<% fb_wall do %>
+  <% for comment in @comments %>
+    <%= fb_wallpost comment.poster, comment.body %>
+  <% end %>
+<% end %>
